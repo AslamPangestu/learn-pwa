@@ -1,5 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const WorkboxWebpackPlugin = require('workbox-webpack-plugin')
+
 const path = require('path')
 
 module.exports = {
@@ -39,6 +41,9 @@ module.exports = {
           to: path.resolve(__dirname, 'dist/')
         }
       ]
+    }),
+    new WorkboxWebpackPlugin.GenerateSW({
+      swDest: './sw.bundle.js'
     })
   ]
 }
