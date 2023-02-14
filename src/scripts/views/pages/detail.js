@@ -17,7 +17,6 @@ const Detail = {
     const movieContainer = document.querySelector('#movie')
     movieContainer.innerHTML = createMovieDetailTemplate(movie)
     LikeButtonInitiator.init({
-      overview: movie.overview,
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
       movie: {
         id: movie.id,
