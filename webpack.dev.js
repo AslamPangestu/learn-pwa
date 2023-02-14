@@ -1,6 +1,7 @@
 const path = require('path')
 const { merge } = require('webpack-merge')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const Dotenv = require('dotenv-webpack')
 
 const common = require('./webpack.common')
 
@@ -19,5 +20,5 @@ module.exports = merge(common, {
     },
     compress: true
   },
-  plugins: [new CleanWebpackPlugin()]
+  plugins: [new Dotenv({ path: './.env.development' }), new CleanWebpackPlugin()]
 })

@@ -1,5 +1,6 @@
 const { merge } = require('webpack-merge')
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin')
+const Dotenv = require('dotenv-webpack')
 const path = require('path')
 
 const common = require('./webpack.common')
@@ -24,6 +25,7 @@ module.exports = merge(common, {
     ]
   },
   plugins: [
+    new Dotenv({ path: './.env.production' }),
     new WorkboxWebpackPlugin.InjectManifest({
       swSrc: path.resolve(__dirname, 'src/scripts/sw.js'),
       swDest: './sw.bundle.js'

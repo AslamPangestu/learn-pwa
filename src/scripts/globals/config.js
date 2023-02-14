@@ -1,16 +1,16 @@
 const CONFIG = {
-  KEY: 'YOUR_API_KEY',
-  BASE_URL: 'https://api.themoviedb.org/3/',
-  BASE_IMAGE_URL: 'https://image.tmdb.org/t/p/w500/',
+  KEY: process.env.API_KEY,
+  BASE_URL: process.env.API_KEY,
+  BASE_IMAGE_URL: process.env.BASE_URL_IMAGE,
   DEFAULT_LANGUAGE: 'en-us',
   CACHE_NAME: new Date().toISOString(),
-  DATABASE_NAME: 'movie-catalogue-database',
-  DATABASE_VERSION: 1,
+  DATABASE_NAME: process.env.IDB_NAME,
+  DATABASE_VERSION: process.env.IDB_VERSION,
   OBJECT_STORE_NAME: 'movies',
-  WEB_SOCKET_SERVER: 'wss://movies-feed.dicoding.dev',
-  PUSH_MSG_VAPID_PUBLIC_KEY: 'BN7-r0Svv7CsTi18-OPYtJLVW0bfuZ1x1UtrygczKjennA_qs7OWmgOewcuYSYF3Gc_mPbqsDh2YoGCDPL0RxDQ',
-  PUSH_MSG_SUBSCRIBE_URL: 'https://dicoding-movie-push-notif.netlify.app/.netlify/functions/subscribe',
-  PUSH_MSG_UNSUBSCRIBE_URL: 'https://dicoding-movie-push-notif.netlify.app/.netlify/functions/unsubscribe'
+  WEB_SOCKET_SERVER: process.env.WEB_SOCKET_URL,
+  PUSH_MSG_VAPID_PUBLIC_KEY: process.env.PUSH_MESSAGE_KEY,
+  PUSH_MSG_SUBSCRIBE_URL: `${process.env.PUSH_MESSAGE_URL}/subscribe`,
+  PUSH_MSG_UNSUBSCRIBE_URL: `${process.env.PUSH_MESSAGE_URL}/unsubscribe`
 }
 
 export default CONFIG
