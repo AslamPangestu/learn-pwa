@@ -1,6 +1,6 @@
 const CONFIG = {
   KEY: process.env.API_KEY,
-  BASE_URL: process.env.API_KEY,
+  BASE_URL: process.env.BASE_URL,
   BASE_IMAGE_URL: process.env.BASE_URL_IMAGE,
   DEFAULT_LANGUAGE: 'en-us',
   CACHE_NAME: new Date().toISOString(),
