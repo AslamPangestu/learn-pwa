@@ -25,7 +25,12 @@ module.exports = merge(common, {
     ]
   },
   plugins: [
-    new Dotenv({ path: './.env.production' }),
+
+    new Dotenv({
+      path: path.resolve(__dirname, '.env'),
+      systemvars: true,
+      safe: true
+    }),
     new WorkboxWebpackPlugin.InjectManifest({
       swSrc: path.resolve(__dirname, 'src/scripts/sw.js'),
       swDest: './sw.bundle.js'

@@ -8,7 +8,7 @@
     "build": "webpack --config webpack.prod.js",
     "serve": "http-server dist",
     "build-serve": "npm run build && npm run serve",
-    "test": "karma start",
+    "test": "karma start --single-run --browsers ChromeHeadless karma.conf.js",
     "e2e": "codeceptjs run --steps"
   },
   "devDependencies": {

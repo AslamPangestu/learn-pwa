@@ -1,6 +1,7 @@
 
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const Dotenv = require('dotenv-webpack')
+const path = require('path')
 // Karma configuration
 // Generated on Fri Jul 03 2020 20:15:52 GMT+0700 (Western Indonesia Time)
 module.exports = function (config) {
@@ -34,7 +35,11 @@ module.exports = function (config) {
       // webpack configuration
       devtool: 'inline-source-map',
       mode: 'development',
-      plugins: [new Dotenv({ path: './.env.development' }), new CleanWebpackPlugin()]
+      plugins: [new Dotenv({
+        path: path.resolve(__dirname, '.env'),
+        systemvars: true,
+        safe: true
+      }), new CleanWebpackPlugin()]
     },
 
     webpackMiddleware: {
