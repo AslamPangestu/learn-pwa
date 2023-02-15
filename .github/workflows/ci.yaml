@@ -23,3 +23,15 @@ jobs:
         run: |
           npm install
           npm run test
+        env:
+          CI: true
+          API_KEY: ${{ secrets.API_KEY }}
+          BASE_URL: ${{ secrets.BASE_URL }}
+          BASE_URL_IMAGE: ${{ secrets.BASE_URL_IMAGE }}
+          WEB_SOCKET_URL: ${{ secrets.WEB_SOCKET_URL }}
+          PUSH_MESSAGE_KEY: ${{ secrets.PUSH_MESSAGE_KEY }}
+          PUSH_MESSAGE_URL: ${{ secrets.PUSH_MESSAGE_URL }}
+          APP_VERSION: ${{ secrets.APP_VERSION }}
+          IDB_NAME: ${{ secrets.IDB_NAME }}
+          IDB_VERSION: ${{ secrets.IDB_VERSION }}
+          

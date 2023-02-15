@@ -20,5 +20,9 @@ module.exports = merge(common, {
     },
     compress: true
   },
-  plugins: [new Dotenv({ path: './.env.development' }), new CleanWebpackPlugin()]
+  plugins: [new Dotenv({
+    path: path.resolve(__dirname, '.env.development'),
+    systemvars: true,
+    safe: true
+  }), new CleanWebpackPlugin()]
 })
