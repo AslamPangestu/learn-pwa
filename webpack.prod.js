@@ -27,7 +27,7 @@ module.exports = merge(common, {
   plugins: [
 
     new Dotenv({
-      path: path.resolve(__dirname, '.env.production'),
+      path: path.resolve(__dirname, '.env'),
       systemvars: true,
       safe: true
     }),

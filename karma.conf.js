@@ -36,7 +36,7 @@ module.exports = function (config) {
       devtool: 'inline-source-map',
       mode: 'development',
       plugins: [new Dotenv({
-        path: path.resolve(__dirname, '.env.development'),
+        path: path.resolve(__dirname, '.env'),
         systemvars: true,
         safe: true
       }), new CleanWebpackPlugin()]
